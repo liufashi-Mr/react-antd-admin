@@ -1,7 +1,14 @@
 import { Provider } from "react-redux";
 import store from "./models";
-import { Routes, Route, Link, BrowserRouter, Outlet } from "react-router-dom";
-import Layout from "./common/Layout";
+import {
+  Routes,
+  Route,
+  Link,
+  BrowserRouter,
+  Outlet,
+  // Redirect,
+} from "react-router-dom";
+import Layout from "./common/Layout/SideBar";
 import Home from "./pages/Home";
 import Edit from "./pages/EditPage";
 import List from "./pages/List";
@@ -17,6 +24,7 @@ function App() {
           <Route path="edit" element={<Edit />} />
           <Route path="list/*" element={<List />} />
           <Route path="detail/:itemId" element={<Detail />} />
+          {/* <Redirect path="/" to="home" /> */}
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
