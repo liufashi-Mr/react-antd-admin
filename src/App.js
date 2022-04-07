@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import store from "./models";
 import { Routes, Route, Link, BrowserRouter, Outlet } from "react-router-dom";
-import Layout from "./common/layout";
+import Layout from "./common/Layout";
 import Home from "./pages/Home";
 import Edit from "./pages/EditPage";
 import List from "./pages/List";

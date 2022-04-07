@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Routes, Route } from "react-router";
+import { Outlet, Routes, Route } from "react-router-dom";
 export default function List() {
   return (
     <div>
@@ -8,12 +8,15 @@ export default function List() {
         <Route path="/" element={<DashboardGraphs />} />
         <Route path="invoices" element={<InvoiceList />} />
       </Routes>
+      <div style={{ color: "red" }}>
+        <Outlet />
+      </div>
     </div>
   );
 }
-function InvoiceList(){
-  return <div>InvoiceList</div>
+function InvoiceList() {
+  return <div>InvoiceList</div>;
 }
-function DashboardGraphs(){
-  return <div>DashboardGraphs</div>
+function DashboardGraphs() {
+  return <div>DashboardGraphs</div>;
 }
