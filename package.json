@@ -33,6 +33,7 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
+    "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.4.5",
     "moment": "^2.29.2",
     "postcss": "^8.4.4",
@@ -86,6 +87,7 @@
     ]
   },
   "devDependencies": {
+    "less": "^4.1.2",
     "sass": "^1.50.0"
   },
   "jest": {
@@ -112,12 +114,12 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
+      "^.+\\.module\\.(css|sass|scss|less)$"
     ],
     "modulePaths": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      "^.+\\.module\\.(css|sass|scss|less)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",

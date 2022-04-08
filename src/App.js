@@ -8,7 +8,8 @@ import {
   Outlet,
   // Redirect,
 } from "react-router-dom";
-import Layout from "./common/Layout/SideBar";
+import "./index.common.less";
+import Layout from "./common/Layout";
 import Home from "./pages/Home";
 import Edit from "./pages/EditPage";
 import List from "./pages/List";

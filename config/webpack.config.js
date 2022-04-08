@@ -27,6 +27,7 @@ const ForkTsCheckerWebpackPlugin =
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 const createEnvironmentHash = require("./webpack/persistentCache/createEnvironmentHash");
+const loader = require("sass-loader");
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
@@ -72,7 +73,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.common\.(scss|sass)$/;
 const sassModuleRegex = /\.(scss|sass)$/;
-
+const lessRegex = /\.common\.(less)$/;
+const lessModuleRegex = /\.(less)$/;
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === "true") {
     return false;
@@ -168,21 +170,44 @@ module.exports = function (webpackEnv) {
       },
     ].filter(Boolean);
     if (preProcessor) {
-      loaders.push(
-        {
-          loader: require.resolve("resolve-url-loader"),
-          options: {
-            sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
-            root: paths.appSrc,
-          },
-        },
-        {
-          loader: require.resolve(preProcessor),
-          options: {
-            sourceMap: true,
-          },
-        }
-      );
+      preProcessor === "less-loader"
+        ? loaders.push(
+            {
+              loader: require.resolve("resolve-url-loader"),
+              options: {
+                sourceMap: isEnvProduction
+                  ? shouldUseSourceMap
+                  : isEnvDevelopment,
+                root: paths.appSrc,
+              },
+            },
+            {
+              loader: require.resolve(preProcessor),
+              options: {
+                sourceMap: true,
+                lessOptions: {
+                  javascriptEnabled: true,
+                },
+              },
+            }
+          )
+        : loaders.push(
+            {
+              loader: require.resolve("resolve-url-loader"),
+              options: {
+                sourceMap: isEnvProduction
+                  ? shouldUseSourceMap
+                  : isEnvDevelopment,
+                root: paths.appSrc,
+              },
+            },
+            {
+              loader: require.resolve(preProcessor),
+              options: {
+                sourceMap: true,
+              },
+            }
+          );
     }
     return loaders;
   };
@@ -319,6 +344,7 @@ module.exports = function (webpackEnv) {
           "scheduler/tracing": "scheduler/tracing-profiling",
         }),
         ...(modules.webpackAliases || {}),
+        "@": path.resolve(__dirname, "../src"),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -541,6 +567,41 @@ module.exports = function (webpackEnv) {
                   },
                 },
                 "sass-loader"
+              ),
+            },
+            {
+              test: lessRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
+                  modules: {
+                    mode: "icss",
+                  },
+                },
+                "less-loader"
+              ),
+              sideEffects: true,
+            },
+            // Adds support for CSS Modules, but using SASS
+            // using the extension .module.scss or .module.sass
+            {
+              test: lessModuleRegex,
+              exclude: lessRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
+                  modules: {
+                    mode: "local",
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
+                },
+                "less-loader"
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
