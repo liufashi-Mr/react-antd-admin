@@ -4,10 +4,7 @@ export default function List() {
   return (
     <div>
       List Page
-      <Routes>
-        <Route path="/" element={<DashboardGraphs />} />
-        <Route path="invoices" element={<InvoiceList />} />
-      </Routes>
+
       <div style={{ color: "red" }}>
         <Outlet />
       </div>

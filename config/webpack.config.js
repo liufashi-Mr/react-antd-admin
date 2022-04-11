@@ -170,44 +170,75 @@ module.exports = function (webpackEnv) {
       },
     ].filter(Boolean);
     if (preProcessor) {
-      preProcessor === "less-loader"
-        ? loaders.push(
-            {
-              loader: require.resolve("resolve-url-loader"),
-              options: {
-                sourceMap: isEnvProduction
-                  ? shouldUseSourceMap
-                  : isEnvDevelopment,
-                root: paths.appSrc,
-              },
+      loaders.push(
+        {
+          loader: require.resolve("resolve-url-loader"),
+          options: {
+            sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+            root: paths.appSrc,
+          },
+        },
+        {
+          loader: require.resolve(preProcessor),
+          options: {
+            sourceMap: true,
+            lessOptions: {
+              javascriptEnabled: true,
             },
-            {
-              loader: require.resolve(preProcessor),
-              options: {
-                sourceMap: true,
-                lessOptions: {
-                  javascriptEnabled: true,
-                },
-              },
-            }
-          )
-        : loaders.push(
-            {
-              loader: require.resolve("resolve-url-loader"),
-              options: {
-                sourceMap: isEnvProduction
-                  ? shouldUseSourceMap
-                  : isEnvDevelopment,
-                root: paths.appSrc,
-              },
-            },
-            {
-              loader: require.resolve(preProcessor),
-              options: {
-                sourceMap: true,
-              },
-            }
-          );
+          },
+        },
+        {
+          loader: require.resolve("style-resources-loader"),
+          options: {
+            patterns: path.resolve(paths.appSrc, "./index.common.less"),
+          },
+        }
+      );
+      // preProcessor === "less-loader"
+      //   ? loaders.push(
+      //       {
+      //         loader: require.resolve("resolve-url-loader"),
+      //         options: {
+      //           sourceMap: isEnvProduction
+      //             ? shouldUseSourceMap
+      //             : isEnvDevelopment,
+      //           root: paths.appSrc,
+      //         },
+      //       },
+      //       {
+      //         loader: require.resolve(preProcessor),
+      //         options: {
+      //           sourceMap: true,
+      //           lessOptions: {
+      //             javascriptEnabled: true,
+      //           },
+      //         },
+      //       },
+      //       {
+      //         loader: require.resolve("style-resources-loader"),
+      //         options: {
+      //           sourceMap: true,
+      //           patterns: path.resolve(path.appSrc, "index.common.less"),
+      //         },
+      //       }
+      //     )
+      //   : loaders.push(
+      //       {
+      //         loader: require.resolve("resolve-url-loader"),
+      //         options: {
+      //           sourceMap: isEnvProduction
+      //             ? shouldUseSourceMap
+      //             : isEnvDevelopment,
+      //           root: paths.appSrc,
+      //         },
+      //       },
+      //       {
+      //         loader: require.resolve(preProcessor),
+      //         options: {
+      //           sourceMap: true,
+      //         },
+      //       }
+      //     );
     }
     return loaders;
   };

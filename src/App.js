@@ -18,17 +18,7 @@ import NotFound from "./common/404";
 function App() {
   return (
     <Provider store={store}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="home" index element={<Home />} />
-          <Route path="edit" element={<Edit />} />
-          <Route path="list/*" element={<List />} />
-          <Route path="detail/:itemId" element={<Detail />} />
-          {/* <Redirect path="/" to="home" /> */}
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Layout />
     </Provider>
   );
 }
