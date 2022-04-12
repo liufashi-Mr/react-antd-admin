@@ -6,6 +6,11 @@ import {
 } from "@ant-design/icons";
 const routes = [
   {
+    path: "/",
+    hidden: true,
+    redirect: "/home",
+  },
+  {
     path: "/home",
     title: "首页",
     meta: { title: "", roles: [] },
@@ -17,30 +22,29 @@ const routes = [
     title: "编辑页",
     meta: { title: "", roles: [] },
     icon: <UserOutlined />,
-    component: lazy(() => import("@/pages/EditPage")),
-  },
-  {
-    path: "/list",
-    title: "列表",
-    meta: { title: "", roles: [] },
-    icon: <UserOutlined />,
-    component: lazy(() => import("@/pages/List")),
     children: [
       {
         path: "test",
-        title: "列表测试1",
+        title: "测试1",
         meta: { title: "", roles: [] },
         icon: <UserOutlined />,
         component: lazy(() => import("@/pages/List/DashboardGraphs")),
       },
       {
         path: "test2",
-        title: "列表测试2",
+        title: "测试2",
         meta: { title: "", roles: [] },
         icon: <UserOutlined />,
         component: lazy(() => import("@/pages/List/InvoiceList")),
       },
     ],
+  },
+  {
+    path: "/list/*",
+    title: "列表",
+    meta: { title: "", roles: [] },
+    icon: <UserOutlined />,
+    component: lazy(() => import("@/pages/List")),
   },
   {
     path: "/detail/:itemId",

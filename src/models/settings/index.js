@@ -3,7 +3,7 @@ const initState = {
   theme: "dark",
   fixHeader: true,
   showSettings: false,
-  menuMode:"inline"
+  menuMode: "inline",
 };
 const SettingModel = (state = initState, { type, data }) => {
   switch (type) {
@@ -11,7 +11,7 @@ const SettingModel = (state = initState, { type, data }) => {
       return { ...state, sideBarCollapsed: !state.sideBarCollapsed };
     }
     case "setTheme": {
-      return { ...state, theme: data ? "dark" : "light" };
+      return { ...state, theme: data };
     }
     case "setFixHeader": {
       return { ...state, fixHeader: data };

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 class Edit extends Component {
   componentDidMount() {
-    console.log(this.props,'==');
   }
   render() {
     return <div>Edit Page</div>;

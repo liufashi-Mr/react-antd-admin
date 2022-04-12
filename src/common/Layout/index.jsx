@@ -1,18 +1,28 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import { Layout as Container, Drawer } from "antd";
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import styles from "./index.less";
 import routes from "@/router";
-import { SettingOutlined, CloseOutlined } from "@ant-design/icons";
-import { closeSync } from "fs-extra";
+import RouterMap from "./components/route";
+import {
+  SettingOutlined,
+  CloseOutlined,
+  CheckOutlined,
+} from "@ant-design/icons";
+import cls from "classnames";
 const { Content } = Container;
 
 const Layout = () => {
   const [settingVisible, setSettingVisible] = useState(true);
   const [showSetting, setShowSetting] = useState(true);
-
+  const dispatch = useDispatch();
+  const { theme, menuMode } = useSelector((state) => state.SettingModel);
+  useEffect(() => {
+    setSettingVisible(false);
+  }, []);
   return (
     <Container>
       <SideBar />
@@ -26,17 +36,7 @@ const Layout = () => {
             minHeight: 280,
           }}
         >
-          <Suspense fallback={<div>loading</div>}>
-            <Routes>
-              {routes.map((route) => (
-                <Route
-                  path={route.path}
-                  element={<route.component />}
-                  key={route.path}
-                ></Route>
-              ))}
-            </Routes>
-          </Suspense>
+          <RouterMap />
           <Drawer
             closable={false}
             visible={settingVisible}
@@ -49,14 +49,24 @@ const Layout = () => {
             >
               {settingVisible ? <CloseOutlined /> : <SettingOutlined />}
             </div>
-            <div className={closeSync(styles.item, styles.vertical)}>
+            <div className={cls(styles.item, styles.vertical)}>
               <p>主题风格</p>
-              <div>
-                <div className={styles.light}></div>
-                <div className={styles.dark}></div>
+              <div style={{ display: "flex" }}>
+                <div
+                  className={styles.dark}
+                  onClick={() => dispatch({ type: "setTheme", data: "dark" })}
+                >
+                  {theme === "dark" && <CheckOutlined />}
+                </div>
+                <div
+                  className={styles.light}
+                  onClick={() => dispatch({ type: "setTheme", data: "light" })}
+                >
+                  {theme === "light" && <CheckOutlined />}
+                </div>
               </div>
             </div>
-            <div className={closeSync(styles.item, styles.flex)}></div>
+            <div className={cls(styles.item, styles.flex)}></div>
           </Drawer>
         </Content>
       </Container>
