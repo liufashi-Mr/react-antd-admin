@@ -1,5 +1,4 @@
-import { Provider } from "react-redux";
-import store from "./models";
+import  { Suspense } from "react";
 import {
   Routes,
   Route,
@@ -10,16 +9,10 @@ import {
 } from "react-router-dom";
 import "./index.common.less";
 import Layout from "./common/Layout";
-import Home from "./pages/Home";
-import Edit from "./pages/EditPage";
-import List from "./pages/List";
-import Detail from "./pages/ItemDetail";
-import NotFound from "./common/404";
+import RouterMap from "./common/Layout/components/RouteMap";
 function App() {
   return (
-    <Provider store={store}>
-      <Layout />
-    </Provider>
+    <RouterMap />
   );
 }
 

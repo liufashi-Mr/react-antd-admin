@@ -19,7 +19,6 @@ const Layout = () => {
             minHeight: 280,
           }}
         >
-          <RouterMap />
           <SettingMenu />
         </Content>
       </Container>

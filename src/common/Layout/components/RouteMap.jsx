@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import routes from "@/router";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { render } from "less";
-
+import Layout from "..";
 const RouterMap = () => {
   const getRoutes = (routes) => {
     return routes.map((route) =>
@@ -29,7 +28,9 @@ const RouterMap = () => {
   };
   return (
     <Suspense fallback={<div>loading</div>}>
-      <Routes>{getRoutes(routes)}</Routes>
+      <Routes>
+        <Route path="/" element={<Layout/>}>{getRoutes(routes)}</Route>
+      </Routes>
     </Suspense>
   );
 };
