@@ -1,9 +1,11 @@
+import styles from "@/index.common.less";
+
 const initState = {
   sideBarCollapsed: false,
-  theme: "dark",
-  fixHeader: true,
-  showSettings: false,
-  menuMode: "inline",
+  theme: "light",
+  themeColor: styles.themeColor,
+  fixHeader: false,
+  menuMode: "horizontal",
 };
 const SettingModel = (state = initState, { type, data }) => {
   switch (type) {
@@ -20,7 +22,10 @@ const SettingModel = (state = initState, { type, data }) => {
       return { ...state, showSettings: data };
     }
     case "setMenuMode": {
-      return { ...state, setMenuMode: data };
+      return { ...state, menuMode: data };
+    }
+    case "setThemeColor": {
+      return { ...state, themeColor: data };
     }
     default: {
       return state;

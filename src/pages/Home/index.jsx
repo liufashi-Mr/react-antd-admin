@@ -5,5 +5,5 @@ export default function Home() {
     // console.log(state, "state");
     return state.CommonModel;
   });
-  return <div>Home Page</div>;
+  return <div>home</div>;
 }

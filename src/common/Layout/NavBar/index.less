@@ -1,1 +1,47 @@
-@import url("../common.less");
+.navBar {
+  background-color: #fff;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 16px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+  .navHeader {
+    display: flex;
+    align-items: center;
+    .left {
+      display: flex;
+      flex: 1 1 0%;
+      width: 100%;
+      .menu {
+        flex: 1 1 0%;
+        min-width: 0;
+      }
+      .logo {
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: flex;
+        margin-right: 36px;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 28px;
+          height: 28px;
+        }
+        span {
+          margin-left: 12px;
+          line-height: 48px;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .light {
+          color: @primary-color;
+        }
+      }
+    }
+    .right {
+      display: flex;
+    }
+  }
+}
+@import url("../index.common.less");

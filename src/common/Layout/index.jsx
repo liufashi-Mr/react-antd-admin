@@ -3,22 +3,23 @@ import { Layout as Container } from "antd";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import SettingMenu from "@/components/SettingMenu";
+import { Outlet } from "react-router-dom";
 const { Content } = Container;
 
-const Layout = () => {
+const Layout = ({ loading }) => {
   return (
     <Container>
       <SideBar />
-      <Container className="site-layout">
+      <Container>
         <NavBar />
         <Content
           style={{
-            margin: "24px 16px",
             padding: 24,
-            minHeight: 280,
+            minHeight: "calc(100vh - 48px )",
           }}
         >
           <SettingMenu />
+          <Outlet />
         </Content>
       </Container>
     </Container>

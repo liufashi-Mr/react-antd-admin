@@ -2,8 +2,9 @@ import React, { Suspense } from "react";
 import { insideRoutes, outsideRoutes } from "@/router";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "@/common/Layout";
+import { Spin } from "antd";
 const RouterMap = () => {
-  const getRoutes = (routes) => {
+   const getRoutes = (routes) => {
     return routes.map((route) =>
       !route.children?.length ? (
         route.redirect ? (
@@ -27,9 +28,9 @@ const RouterMap = () => {
     );
   };
   return (
-    <Suspense fallback={<div>loading</div>}>
+    <Suspense fallback={<></>}>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/*" element={<Layout />}>
           {getRoutes(insideRoutes)}
         </Route>
         {getRoutes(outsideRoutes)}

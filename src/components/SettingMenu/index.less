@@ -25,9 +25,7 @@
     }
   }
   .item {
-    height: 100%;
-    margin-bottom: 24px;
-    overflow-y: scroll;
+    margin-bottom: 18px;
   }
   .flex {
   }
@@ -73,6 +71,51 @@
       content: "";
     }
     .dark::after {
+      background-color: #001529;
+    }
+    .inline,
+    .horizontal,
+    .mixin {
+      padding: 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      position: relative;
+      width: 44px;
+      height: 36px;
+      margin-right: 16px;
+      overflow: hidden;
+      background-color: #f0f2f5;
+      border-radius: 4px;
+      box-shadow: 0 1px 2.5px 0 rgb(0 0 0 / 18%);
+      cursor: pointer;
+    }
+    .inline::before,
+    .mixin::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 33%;
+      height: 100%;
+      z-index: 1;
+      background-color: #001529;
+    }
+    .mixin::before {
+      background-color: #fff;
+    }
+    .inline::after,
+    .horizontal::after,
+    .mixin::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      background-color: #fff;
+      content: "";
+    }
+    .horizontal::after,.mixin::after{
       background-color: #001529;
     }
   }

@@ -1,12 +1,17 @@
-@import url("../common.less");
+@import url("../index.common.less");
 .sideBar {
   width: 208px !important;
   flex: 0 0 208px !important;
   max-width: 208px !important;
   min-width: 208px !important;
+  box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
   :global {
     .ant-layout-sider-trigger {
       width: 208px !important;
+    }
+    .ant-menu-submenu .ant-menu-sub {
+      transition: background-color 0.3s,
+        padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
 }
