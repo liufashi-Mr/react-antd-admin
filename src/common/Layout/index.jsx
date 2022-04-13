@@ -2,8 +2,7 @@ import React from "react";
 import { Layout as Container } from "antd";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
-import RouterMap from "./components/RouteMap";
-import SettingMenu from "./components/SettingMenu";
+import SettingMenu from "@/components/SettingMenu";
 const { Content } = Container;
 
 const Layout = () => {

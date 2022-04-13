@@ -4,7 +4,7 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
-const routes = [
+export const insideRoutes = [
   {
     path: "/",
     hidden: true,
@@ -55,5 +55,11 @@ const routes = [
     hidden: true,
   },
 ];
-
-export default routes;
+export const outsideRoutes = [
+  {
+    path: "/login",
+    title: "登录",
+    meta: { title: "", roles: [] },
+    component: lazy(() => import("@/pages/Login")),
+  },
+];

@@ -6,7 +6,7 @@ import cls from "classnames";
 import routes from "@/router";
 import styles from "./index.less";
 import logo from "@/assets/images/logo512.png";
-import MenuItem from "../components/MenuItem";
+import MenuItem from "@/components/MenuItem";
 const { Sider } = Container;
 const { SubMenu, ItemGroup, Item } = Menu;
 const SideBar = () => {

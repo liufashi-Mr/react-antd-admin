@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
-import routes from "@/router";
+import { insideRoutes, outsideRoutes } from "@/router";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Layout from "..";
+import Layout from "@/common/Layout";
 const RouterMap = () => {
   const getRoutes = (routes) => {
     return routes.map((route) =>
@@ -29,7 +29,10 @@ const RouterMap = () => {
   return (
     <Suspense fallback={<div>loading</div>}>
       <Routes>
-        <Route path="/" element={<Layout/>}>{getRoutes(routes)}</Route>
+        <Route path="/" element={<Layout />}>
+          {getRoutes(insideRoutes)}
+        </Route>
+        {getRoutes(outsideRoutes)}
       </Routes>
     </Suspense>
   );
