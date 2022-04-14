@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { insideRoutes } from "@/router";
 import RouteLoading from "../RouteLoading";
 import getRoutes from "../RouteMap";
+import BreadcrumbGroup from "../BreadcrumbGroup";
 const { Content } = Container;
 
 const Layout = () => {
@@ -27,6 +28,7 @@ const Layout = () => {
           <Suspense fallback={ <RouteLoading/> } >
             <Routes>{getRoutes(insideRoutes)}</Routes>
           </Suspense>
+          <BreadcrumbGroup />
           <Outlet />
         </Content>
       </Container>

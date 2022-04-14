@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 import cls from "classnames";
 import styles from "./index.less";
-
 const SettingMenu = () => {
   const [settingVisible, setSettingVisible] = useState(true);
   const dispatch = useDispatch();
@@ -34,7 +33,7 @@ const SettingMenu = () => {
       <div className={cls(styles.item, styles.vertical)}>
         <p>主题风格</p>
         <div style={{ display: "flex" }}>
-          { (
+          {
             <Tooltip title="暗色主题">
               <div
                 className={styles.dark}
@@ -45,7 +44,7 @@ const SettingMenu = () => {
                 {theme === "dark" && <CheckOutlined />}
               </div>
             </Tooltip>
-          )}
+          }
           <Tooltip title="亮色主题">
             <div
               className={styles.light}
@@ -90,6 +89,16 @@ const SettingMenu = () => {
               {menuMode === "mixin" && <CheckOutlined />}
             </div>
           </Tooltip>
+        </div>
+      </div>
+      <div className={cls(styles.item, styles.vertical)}>
+        <p>主题色</p>
+        <div style={{ display: "flex" }}>
+          {
+            <Tooltip title="暗色主题">
+             <button onClick={()=>{}}>change</button>
+            </Tooltip>
+          }
         </div>
       </div>
       <div className={cls(styles.item, styles.flex)}></div>

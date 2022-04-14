@@ -13,7 +13,6 @@ const SideBar = () => {
   const { sideBarCollapsed, theme, menuMode } = useSelector(
     (state) => state.SettingModel
   );
-  console.log(theme,'theme',menuMode,'menuMode')
   return (
     <>
       {menuMode !== "horizontal" && (
