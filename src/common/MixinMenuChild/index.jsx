@@ -1,14 +1,15 @@
 import React from "react";
 import { Menu } from "antd";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { insideRoutes } from "@/router";
 const { SubMenu } = Menu;
 
-const MenuItem = () => {
-  const dispatch = useDispatch();
-  const { theme, menuMode } = useSelector((state) => state.SettingModel);
-  const getMenu = (routes, parentPath) => {
+const MixinMenuChild = () => {
+  const { theme, mixinMenuActivePath } = useSelector(
+    (state) => state.SettingModel
+  );
+  const getChildMenu = (routes, parentPath) => {
     return routes
       .filter((item) => !item.hidden)
       .map((route) =>
@@ -31,15 +32,21 @@ const MenuItem = () => {
             key={parentPath + route.path}
             icon={route.icon || <></>}
           >
-            {getMenu(route.children, parentPath + route.path + "/")}
+            {getChildMenu(route.children, parentPath + route.path + "/")}
           </SubMenu>
         )
       );
   };
+
   return (
-    <Menu theme={theme} mode={menuMode} defaultSelectedKeys={["1"]}>
-      {getMenu(insideRoutes, "")}
+    <Menu theme={theme} mode="inline" defaultSelectedKeys={["1"]}>
+      {getChildMenu(
+        insideRoutes[
+          insideRoutes.findIndex((item) => item.path === mixinMenuActivePath)
+        ]?.children || [],
+        mixinMenuActivePath + "/"
+      )}
     </Menu>
   );
 };
-export default MenuItem;
+export default MixinMenuChild;

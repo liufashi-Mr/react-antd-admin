@@ -13,9 +13,7 @@ import styles from "./index.less";
 const SettingMenu = () => {
   const [settingVisible, setSettingVisible] = useState(true);
   const dispatch = useDispatch();
-  const { theme, menuMode } = useSelector(
-    (state) => state.SettingModel
-  );
+  const { theme, menuMode } = useSelector((state) => state.SettingModel);
   useEffect(() => {
     setSettingVisible(false);
   }, []);
@@ -23,7 +21,7 @@ const SettingMenu = () => {
     <Drawer
       closable={false}
       visible={settingVisible}
-      onClose={()=>setSettingVisible(false)}
+      onClose={() => setSettingVisible(false)}
       width={300}
       className={styles.container}
     >
@@ -36,16 +34,18 @@ const SettingMenu = () => {
       <div className={cls(styles.item, styles.vertical)}>
         <p>主题风格</p>
         <div style={{ display: "flex" }}>
-          <Tooltip title="暗色主题">
-            <div
-              className={styles.dark}
-              onClick={() => {
-                dispatch({ type: "setTheme", data: "dark" });
-              }}
-            >
-              {theme === "dark" && <CheckOutlined />}
-            </div>
-          </Tooltip>
+          {menuMode !== "mixin" && (
+            <Tooltip title="暗色主题">
+              <div
+                className={styles.dark}
+                onClick={() => {
+                  dispatch({ type: "setTheme", data: "dark" });
+                }}
+              >
+                {theme === "dark" && <CheckOutlined />}
+              </div>
+            </Tooltip>
+          )}
           <Tooltip title="亮色主题">
             <div
               className={styles.light}
@@ -82,7 +82,10 @@ const SettingMenu = () => {
           <Tooltip title="混合菜单栏">
             <div
               className={styles.mixin}
-              onClick={() => dispatch({ type: "setMenuMode", data: "mixin" })}
+              onClick={() => {
+                dispatch({ type: "setTheme", data: "light" });
+                dispatch({ type: "setMenuMode", data: "mixin" });
+              }}
             >
               {menuMode === "mixin" && <CheckOutlined />}
             </div>

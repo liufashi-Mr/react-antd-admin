@@ -1,14 +1,12 @@
 import React from "react";
-import { Layout as Container, Menu } from "antd";
+import { Layout as Container } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import cls from "classnames";
-import routes from "@/router";
 import styles from "./index.less";
 import logo from "@/assets/images/logo512.png";
-import MenuItem from "@/components/MenuItem";
+import MenuList from "@/common/MenuList";
+import MixinMenuChild from "@/common/MixinMenuChild";
 const { Sider } = Container;
-const { SubMenu, ItemGroup, Item } = Menu;
 const SideBar = () => {
   const dispatch = useDispatch();
   const { sideBarCollapsed, theme, menuMode } = useSelector(
@@ -26,17 +24,19 @@ const SideBar = () => {
             [styles.sideBarCollapsed]: sideBarCollapsed,
           })}
         >
-          <div
-            className={cls(styles.logo, {
-              [styles.logoCollapsed]: sideBarCollapsed,
-            })}
-          >
-            <img src={logo} alt="logo" />
-            {!sideBarCollapsed && (
-              <span className={styles[theme]}>React admin</span>
-            )}
-          </div>
-          <MenuItem />
+          {menuMode === "inline" && (
+            <div
+              className={cls(styles.logo, {
+                [styles.logoCollapsed]: sideBarCollapsed,
+              })}
+            >
+              <img src={logo} alt="logo" />
+              {!sideBarCollapsed && (
+                <span className={styles[theme]}>React admin</span>
+              )}
+            </div>
+          )}
+          {menuMode === "inline" ? <MenuList /> : <MixinMenuChild />}
         </Sider>
       )}
     </>

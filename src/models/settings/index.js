@@ -1,6 +1,7 @@
 import styles from "@/index.common.less";
 
 const initState = {
+  mixinMenuActivePath: "",
   sideBarCollapsed: false,
   theme: "light",
   themeColor: styles.themeColor,
@@ -26,6 +27,9 @@ const SettingModel = (state = initState, { type, data }) => {
     }
     case "setThemeColor": {
       return { ...state, themeColor: data };
+    }
+    case "setMixinMenuActivePath": {
+      return { ...state, mixinMenuActivePath: data };
     }
     default: {
       return state;

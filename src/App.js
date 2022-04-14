@@ -8,7 +8,7 @@ import {
   // Redirect,
 } from "react-router-dom";
 import "./index.common.less";
-import RouterMap from "@/components/RouteMap";
+import RouterMap from "@/common/RouteMap";
 function App() {
   return (
     <RouterMap />

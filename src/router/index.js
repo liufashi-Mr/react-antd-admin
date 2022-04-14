@@ -61,6 +61,6 @@ export const outsideRoutes = [
     path: "*",
     title: "404",
     meta: { title: "", roles: [] },
-    component: lazy(() => import("@/common/404")),
+    component: lazy(() => import("@/common/NotFound")),
   },
 ];

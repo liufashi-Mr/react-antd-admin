@@ -2,16 +2,18 @@ import React from "react";
 import { Layout as Container } from "antd";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
-import SettingMenu from "@/components/SettingMenu";
+import SettingMenu from "@/common/SettingMenu";
 import { Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 const { Content } = Container;
 
-const Layout = ({ loading }) => {
+const Layout = () => {
+  const { menuMode } = useSelector((state) => state.SettingModel);
   return (
     <Container>
-      <SideBar />
+      {menuMode === "inline" ? <SideBar /> :<NavBar /> }
       <Container>
-        <NavBar />
+      {menuMode === "inline" ? <NavBar /> : <SideBar />}
         <Content
           style={{
             padding: 24,
