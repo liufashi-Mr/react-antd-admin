@@ -1,17 +1,18 @@
-import  { Suspense } from "react";
-import {
-  Routes,
-  Route,
-  Link,
-  BrowserRouter,
-  Outlet,
-  // Redirect,
-} from "react-router-dom";
+import { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import Layout from "@/common/Layout";
 import "./index.common.less";
-import RouterMap from "@/common/RouteMap";
+import getRoutes from "@/common/RouteMap";
+import { outsideRoutes } from "@/router";
+import RouteLoading from "./common/RouteLoading";
 function App() {
   return (
-    <RouterMap />
+    <Suspense fallback={<RouteLoading />}>
+      <Routes>
+        <Route path="/*" element={<Layout />} />
+        {getRoutes(outsideRoutes)}
+      </Routes>
+    </Suspense>
   );
 }
 

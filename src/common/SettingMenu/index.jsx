@@ -34,7 +34,7 @@ const SettingMenu = () => {
       <div className={cls(styles.item, styles.vertical)}>
         <p>主题风格</p>
         <div style={{ display: "flex" }}>
-          {menuMode !== "mixin" && (
+          { (
             <Tooltip title="暗色主题">
               <div
                 className={styles.dark}
@@ -83,8 +83,8 @@ const SettingMenu = () => {
             <div
               className={styles.mixin}
               onClick={() => {
-                dispatch({ type: "setTheme", data: "light" });
                 dispatch({ type: "setMenuMode", data: "mixin" });
+                // dispatch({ type: "setTheme", data: "light" });
               }}
             >
               {menuMode === "mixin" && <CheckOutlined />}

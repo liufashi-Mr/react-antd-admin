@@ -5,7 +5,7 @@ import {
   UploadOutlined,
 } from "@ant-design/icons";
 export const insideRoutes = [
-  { path: "", redirect: "/home", hidden: true },
+  { path: "/", redirect: "home", hidden: true },
   {
     path: "home",
     title: "首页",
@@ -49,6 +49,13 @@ export const insideRoutes = [
     component: lazy(() => import("@/pages/ItemDetail")),
     hidden: true,
   },
+  {
+    path: "*",
+    title: "404",
+    meta: { title: "", roles: [] },
+    component: lazy(() => import("@/common/NotFound")),
+    hidden: true,
+  },
 ];
 export const outsideRoutes = [
   {
@@ -56,11 +63,5 @@ export const outsideRoutes = [
     title: "登录",
     meta: { title: "", roles: [] },
     component: lazy(() => import("@/pages/Login")),
-  },
-  {
-    path: "*",
-    title: "404",
-    meta: { title: "", roles: [] },
-    component: lazy(() => import("@/common/NotFound")),
   },
 ];

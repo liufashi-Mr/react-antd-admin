@@ -2,9 +2,10 @@
   background-color: #fff;
   height: 48px;
   line-height: 48px;
+  overflow: hidden;
   padding: 0 16px;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+
   .navHeader {
     display: flex;
     align-items: center;
@@ -17,7 +18,6 @@
         min-width: 0;
       }
       .logo {
-        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         display: flex;
         margin-right: 36px;
         align-items: center;
@@ -46,8 +46,7 @@
 }
 .mixin {
   background-color: #001529;
-  .logo {
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
+  color: #fff;
 }
 @import url("../index.common.less");

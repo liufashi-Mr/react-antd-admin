@@ -1,19 +1,22 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Layout as Container } from "antd";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import SettingMenu from "@/common/SettingMenu";
-import { Outlet } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { Outlet, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { insideRoutes } from "@/router";
+import RouteLoading from "../RouteLoading";
+import getRoutes from "../RouteMap";
 const { Content } = Container;
 
 const Layout = () => {
   const { menuMode } = useSelector((state) => state.SettingModel);
   return (
     <Container>
-      {menuMode === "inline" ? <SideBar /> :<NavBar /> }
+      {menuMode === "inline" ? <SideBar /> : <NavBar />}
       <Container>
-      {menuMode === "inline" ? <NavBar /> : <SideBar />}
+        {menuMode === "inline" ? <NavBar /> : <SideBar />}
         <Content
           style={{
             padding: 24,
@@ -21,6 +24,9 @@ const Layout = () => {
           }}
         >
           <SettingMenu />
+          <Suspense fallback={ <RouteLoading/> } >
+            <Routes>{getRoutes(insideRoutes)}</Routes>
+          </Suspense>
           <Outlet />
         </Content>
       </Container>

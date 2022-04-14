@@ -7,28 +7,28 @@ import MixinMenuHeader from "@/common/MixinMenuHeader";
 import styles from "./index.less";
 import logo from "@/assets/images/logo512.png";
 import cls from "classnames";
+import { useNavigate } from "react-router-dom";
 const { Header } = Container;
 const NavBar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { sideBarCollapsed, theme, menuMode } = useSelector(
     (state) => state.SettingModel
   );
   return (
     <Header
       className={cls(styles.navBar, {
-        [styles[theme]]: menuMode === "horizontal",
-        [styles.mixin]: menuMode === "mixin",
+        [styles[theme]]: menuMode !== "inline",
       })}
     >
       <div className={styles.navHeader}>
         {menuMode !== "inline" ? (
           <div className={styles.left}>
-            <div className={styles.logo}>
+            <div className={styles.logo} onClick={() => navigate("/")}>
               <img src={logo} alt="logo" />
               <span
                 className={cls({
-                  [styles[theme]]: menuMode === "horizontal",
-                  [styles.mixin]: menuMode === "mixin"
+                  [styles[theme]]: menuMode !== "inline",
                 })}
               >
                 React admin
@@ -49,7 +49,7 @@ const NavBar = () => {
             )}
           </div>
         )}
-        <div className={styles.right}>otherInfo</div>
+        <div className={cls(styles.right, {[styles[theme]]:menuMode!=='inline',[styles.light]:menuMode==="inline"})}>otherInfo</div>
       </div>
     </Header>
   );

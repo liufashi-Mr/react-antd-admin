@@ -46,7 +46,7 @@ const MixinMenuHeader = () => {
   };
 
   return (
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+    <Menu theme={theme} mode="horizontal" defaultSelectedKeys={["1"]}>
       {getHeaderMenu(insideRoutes, "")}
     </Menu>
   );

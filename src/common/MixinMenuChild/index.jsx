@@ -6,7 +6,7 @@ import { insideRoutes } from "@/router";
 const { SubMenu } = Menu;
 
 const MixinMenuChild = () => {
-  const { theme, mixinMenuActivePath } = useSelector(
+  const { mixinMenuActivePath } = useSelector(
     (state) => state.SettingModel
   );
   const getChildMenu = (routes, parentPath) => {
@@ -39,7 +39,7 @@ const MixinMenuChild = () => {
   };
 
   return (
-    <Menu theme={theme} mode="inline" defaultSelectedKeys={["1"]}>
+    <Menu theme='light' mode="inline" defaultSelectedKeys={["1"]}>
       {getChildMenu(
         insideRoutes[
           insideRoutes.findIndex((item) => item.path === mixinMenuActivePath)
