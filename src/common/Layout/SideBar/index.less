@@ -1,4 +1,9 @@
 @import url("../common.less");
+.sider {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .sideBar {
   width: 208px !important;
   flex: 0 0 208px !important;
@@ -26,11 +31,12 @@
     }
   }
 }
-.sideBarHidden{
-  width: 0!important;
+.sideBarHidden {
+  width: 0 !important;
   overflow: hidden;
 }
-.inline,.mixin {
+.inline,
+.mixin {
   height: 100vh;
 }
 horizontal {

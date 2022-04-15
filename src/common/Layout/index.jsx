@@ -19,7 +19,7 @@ const Layout = () => {
       {menuMode === "inline" ? <SideBar /> : <NavBar />}
       <Container>
         {menuMode === "inline" ? <NavBar /> : <SideBar />}
-        <Content style={{ padding: "12px 16px 16px",height:"calc( 100vh - 48px)",overflowY:"scroll"}}>
+        <Content style={{ padding: "12px 16px 16px"}}>
           {menuMode !== "inline" && (
             <div className={styles.breadcrumb}>
               <BreadcrumbGroup />

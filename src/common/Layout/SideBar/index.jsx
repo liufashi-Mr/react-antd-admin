@@ -20,7 +20,7 @@ const SideBar = () => {
           collapsible
           collapsed={sideBarCollapsed}
           onCollapse={() => dispatch({ type: "setSideBarCollapsed" })}
-          className={cls(styles[menuMode],styles[theme], {
+          className={cls(styles[menuMode], styles[theme], styles.sider, {
             [styles.sideBar]: !sideBarCollapsed,
             [styles.sideBarCollapsed]: sideBarCollapsed,
             [styles.light]: menuMode === "mixin",

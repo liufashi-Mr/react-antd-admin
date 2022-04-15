@@ -2,11 +2,16 @@
   background-color: #001529;
   color: #fff;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
+  :global {
+    .ant-layout-sider-trigger {
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+    }
+  }
 }
 .light {
   background-color: #ffffff;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
-  color: #000000D9;
+  color: #000000d9;
   :global {
     .ant-layout-sider-trigger {
       background-color: #fff;
