@@ -96,7 +96,9 @@ const SettingMenu = () => {
         <div style={{ display: "flex" }}>
           {
             <Tooltip title="暗色主题">
-             <button onClick={()=>{}}>change</button>
+              <button onClick={() => {}}>
+                {[[], [], [[], "测试2"], [], [], []]}
+              </button>
             </Tooltip>
           }
         </div>

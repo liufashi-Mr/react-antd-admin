@@ -5,7 +5,11 @@ import {
   UploadOutlined,
 } from "@ant-design/icons";
 export const insideRoutes = [
-  { path: "/", redirect: "home", hidden: true },
+  {
+    path: "/",
+    redirect: "home",
+    hidden: true,
+  },
   {
     path: "home",
     title: "首页",

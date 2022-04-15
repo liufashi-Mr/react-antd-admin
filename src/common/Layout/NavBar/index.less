@@ -9,6 +9,15 @@
   .navHeader {
     display: flex;
     align-items: center;
+    .inlineLeft {
+      font-size: 16px;
+      flex: 1 1 0%;
+      display: flex;
+      align-items: center;
+      >span{
+        margin-right: 10px;
+      }
+    }
     .left {
       display: flex;
       flex: 1 1 0%;
@@ -49,4 +58,4 @@
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
   color: #fff;
 }
-@import url("../index.common.less");
+@import url("../common.less");

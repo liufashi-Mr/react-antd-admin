@@ -8,6 +8,7 @@ import styles from "./index.less";
 import logo from "@/assets/images/logo512.png";
 import cls from "classnames";
 import { useNavigate } from "react-router-dom";
+import BreadcrumbGroup from "@/common/BreadcrumbGroup";
 const { Header } = Container;
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,9 @@ const NavBar = () => {
             </div>
           </div>
         ) : (
-          <div style={{ fontSize: 16, flex: "1 1 0%" }}>
+          <div
+            className={styles.inlineLeft}
+          >
             {React.createElement(
               sideBarCollapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
               {
@@ -47,9 +50,17 @@ const NavBar = () => {
                 onClick: () => dispatch({ type: "setSideBarCollapsed" }),
               }
             )}
+            <BreadcrumbGroup />
           </div>
         )}
-        <div className={cls(styles.right, {[styles[theme]]:menuMode!=='inline',[styles.light]:menuMode==="inline"})}>otherInfo</div>
+        <div
+          className={cls(styles.right, {
+            [styles[theme]]: menuMode !== "inline",
+            [styles.light]: menuMode === "inline",
+          })}
+        >
+          otherInfo
+        </div>
       </div>
     </Header>
   );

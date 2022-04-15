@@ -9,6 +9,7 @@ import { insideRoutes } from "@/router";
 import RouteLoading from "../RouteLoading";
 import getRoutes from "../RouteMap";
 import BreadcrumbGroup from "../BreadcrumbGroup";
+import styles from "./index.less";
 const { Content } = Container;
 
 const Layout = () => {
@@ -18,18 +19,19 @@ const Layout = () => {
       {menuMode === "inline" ? <SideBar /> : <NavBar />}
       <Container>
         {menuMode === "inline" ? <NavBar /> : <SideBar />}
-        <Content
-          style={{
-            padding: 24,
-            minHeight: "calc(100vh - 48px )",
-          }}
-        >
+        <Content style={{ padding: "12px 16px 16px",height:"calc( 100vh - 48px)",overflowY:"scroll"}}>
+          {menuMode !== "inline" && (
+            <div className={styles.breadcrumb}>
+              <BreadcrumbGroup />
+            </div>
+          )}
+          <div className={styles.content}>
+            <Suspense fallback={<RouteLoading />}>
+              <Routes>{getRoutes(insideRoutes)}</Routes>
+            </Suspense>
+            <Outlet />
+          </div>
           <SettingMenu />
-          <Suspense fallback={ <RouteLoading/> } >
-            <Routes>{getRoutes(insideRoutes)}</Routes>
-          </Suspense>
-          <BreadcrumbGroup />
-          <Outlet />
         </Content>
       </Container>
     </Container>
