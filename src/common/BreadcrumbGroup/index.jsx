@@ -4,8 +4,6 @@ import { Breadcrumb } from "antd";
 import { insideRoutes } from "@/router";
 const BreadcrumbGroup = () => {
   const location = useLocation();
-  console.log(location);
-  const a = ["1234"];
   const pathSnippets = location.pathname.split("/").filter((i) => i);
   const getBreadcrumbTitle = (routes, path) => {
     return routes.reduce((pre, val) => {
