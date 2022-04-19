@@ -10,9 +10,11 @@ import { Link } from "react-router-dom";
 const { Sider } = Container;
 const SideBar = () => {
   const dispatch = useDispatch();
-  const { sideBarCollapsed, theme, menuMode } = useSelector(
+  const { sideBarCollapsed, theme, menuMode, sideBarHidden } = useSelector(
     (state) => state.SettingModel
   );
+  console.log(sideBarHidden, "11");
+  console.log("rendeer")
   return (
     <>
       {menuMode !== "horizontal" && (
@@ -20,10 +22,11 @@ const SideBar = () => {
           collapsible
           collapsed={sideBarCollapsed}
           onCollapse={() => dispatch({ type: "setSideBarCollapsed" })}
-          className={cls(styles[menuMode], styles[theme], styles.sider, {
+          className={cls(styles[menuMode], styles[theme], {
             [styles.sideBar]: !sideBarCollapsed,
             [styles.sideBarCollapsed]: sideBarCollapsed,
             [styles.light]: menuMode === "mixin",
+            [styles.sideBarHidden]: sideBarHidden&&menuMode==='mixin',
           })}
         >
           {menuMode === "inline" && (

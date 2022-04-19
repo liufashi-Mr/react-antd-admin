@@ -10,6 +10,7 @@ import RouteLoading from "../RouteLoading";
 import getRoutes from "../RouteMap";
 import BreadcrumbGroup from "../BreadcrumbGroup";
 import styles from "./index.less";
+import cls from "classnames";
 const { Content } = Container;
 
 const Layout = () => {
@@ -17,9 +18,12 @@ const Layout = () => {
   return (
     <Container>
       {menuMode === "inline" ? <SideBar /> : <NavBar />}
-      <Container>
+      <Container className={cls({ [styles.inline]: menuMode === "inline" })}>
         {menuMode === "inline" ? <NavBar /> : <SideBar />}
-        <Content style={{ padding: "12px 16px 16px"}}>
+        <Content
+          className={cls({ [styles.mixin]: menuMode === "mixin" })}
+          style={{ padding: "12px 16px 16px" }}
+        >
           {menuMode !== "inline" && (
             <div className={styles.breadcrumb}>
               <BreadcrumbGroup />

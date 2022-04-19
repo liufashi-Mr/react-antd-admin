@@ -7,11 +7,15 @@ const initState = {
   themeColor: styles.themeColor,
   fixHeader: false,
   menuMode: "horizontal",
+  sideBarHidden: false,
 };
 const SettingModel = (state = initState, { type, data }) => {
   switch (type) {
     case "setSideBarCollapsed": {
       return { ...state, sideBarCollapsed: !state.sideBarCollapsed };
+    }
+    case "serSideBarHidden": {
+      return { ...state, sideBarHidden: data };
     }
     case "setTheme": {
       return { ...state, theme: data };

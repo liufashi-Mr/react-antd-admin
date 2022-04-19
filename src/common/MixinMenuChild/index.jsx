@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Menu } from "antd";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { insideRoutes } from "@/router";
 const { SubMenu } = Menu;
@@ -9,6 +9,18 @@ const MixinMenuChild = () => {
   const { mixinMenuActivePath } = useSelector(
     (state) => state.SettingModel
   );
+  const [childMenuList, setChildMenuList] = useState([]);
+  useEffect(() => {
+    setChildMenuList(
+      insideRoutes[
+        insideRoutes.findIndex((item) => item.path === mixinMenuActivePath)
+      ]?.children || []
+    );
+  }, [mixinMenuActivePath]);
+  useEffect(() => {
+    dispatch({ type: "serSideBarHidden", data: !childMenuList.length });
+  }, [childMenuList]);
+  const dispatch = useDispatch();
   const getChildMenu = (routes, parentPath) => {
     return routes
       .filter((item) => !item.hidden)
@@ -39,13 +51,8 @@ const MixinMenuChild = () => {
   };
 
   return (
-    <Menu theme='light' mode="inline" defaultSelectedKeys={["1"]}>
-      {getChildMenu(
-        insideRoutes[
-          insideRoutes.findIndex((item) => item.path === mixinMenuActivePath)
-        ]?.children || [],
-        mixinMenuActivePath + "/"
-      )}
+    <Menu theme="light" mode="inline" defaultSelectedKeys={["1"]}>
+      {getChildMenu(childMenuList, mixinMenuActivePath + "/")}
     </Menu>
   );
 };
