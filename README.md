@@ -8,7 +8,7 @@
 2. 上下布局：主导航放置于页面的顶端。由于导航栏水平空间有限，适用于那些一级导航项没有很多的信息结构的系统。
 3. 顶部-侧边布局：同样拥有顶部导航及侧边栏，适用于应用型的网站，但是会牺牲部分内容空间。
 
-预览：[react-antd-admin](http://admin.liufashi.top)
-详细设计：[http://blog.liufashi.top](http://blog.liufashi.top)
+- 预览：[react-antd-admin](http://admin.liufashi.top)
+- 详细设计：[http://blog.liufashi.top](http://blog.liufashi.top)
 
 ## 使用
