@@ -3,10 +3,10 @@ import styles from "@/index.common.less";
 const initState = {
   mixinMenuActivePath: "",
   sideBarCollapsed: false,
-  theme: "light",
+  theme: "dark",
   themeColor: styles.themeColor,
   fixHeader: false,
-  menuMode: "horizontal",
+  menuMode: "mixin",
   sideBarHidden: false,
 };
 const SettingModel = (state = initState, { type, data }) => {
@@ -14,7 +14,7 @@ const SettingModel = (state = initState, { type, data }) => {
     case "setSideBarCollapsed": {
       return { ...state, sideBarCollapsed: !state.sideBarCollapsed };
     }
-    case "serSideBarHidden": {
+    case "setSideBarHidden": {
       return { ...state, sideBarHidden: data };
     }
     case "setTheme": {

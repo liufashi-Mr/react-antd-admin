@@ -8,6 +8,12 @@ const getRoutes = (routes) => {
           key={route.path}
           element={<Navigate to={route.redirect} />}
         />
+      ) : route.index ? (
+        <Route
+          index
+          key={route.path||route.redirect}
+          element={<route.component />}
+        />
       ) : (
         <Route
           key={route.path}

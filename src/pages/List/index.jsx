@@ -10,7 +10,7 @@ export default function List() {
       <Link to="InvoiceList">asdf</Link>
 
       <Routes>
-        <Route path="InvoiceList" element={<InvoiceList />}></Route>
+        <Route index  element={<InvoiceList />}></Route>
         <Route path="dashboardGraphs" element={<DashboardGraphs />}></Route>
       </Routes>
       <div style={{ color: "red" }}>

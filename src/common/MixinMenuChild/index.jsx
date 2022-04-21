@@ -3,12 +3,16 @@ import { Menu } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { insideRoutes } from "@/router";
+import { useMenu } from "@/hooks";
+
 const { SubMenu } = Menu;
 
 const MixinMenuChild = () => {
-  const { mixinMenuActivePath } = useSelector(
+  const { mixinMenuActivePath, sideBarHidden } = useSelector(
     (state) => state.SettingModel
   );
+  const selectedKeys = useMenu();
+  const [openKeys, setOpenKeys] = useState(useMenu());
   const [childMenuList, setChildMenuList] = useState([]);
   useEffect(() => {
     setChildMenuList(
@@ -18,7 +22,8 @@ const MixinMenuChild = () => {
     );
   }, [mixinMenuActivePath]);
   useEffect(() => {
-    dispatch({ type: "serSideBarHidden", data: !childMenuList.length });
+    dispatch({ type: "setSideBarHidden", data: !childMenuList.length });
+    console.log(!childMenuList.length, "1112");
   }, [childMenuList]);
   const dispatch = useDispatch();
   const getChildMenu = (routes, parentPath) => {
@@ -51,8 +56,14 @@ const MixinMenuChild = () => {
   };
 
   return (
-    <Menu theme="light" mode="inline" defaultSelectedKeys={["1"]}>
-      {getChildMenu(childMenuList, mixinMenuActivePath + "/")}
+    <Menu
+      theme="light"
+      mode="inline"
+      selectedKeys={selectedKeys}
+      openKeys={openKeys}
+      onOpenChange={(keys) => setOpenKeys(keys)}
+    >
+      {getChildMenu(childMenuList, "/" + mixinMenuActivePath + "/")}
     </Menu>
   );
 };

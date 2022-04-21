@@ -9,7 +9,7 @@ const BreadcrumbGroup = () => {
     return routes.reduce((pre, val) => {
       if (
         val.path === path ||
-        (/\/\/*|\/:/.test(val.path) && val.path.includes(path))
+        (/\/\/*|:/.test(val.path) && val.path.includes(path))
       ) {
         return (pre += val.title);
       }
