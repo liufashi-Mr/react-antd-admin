@@ -1,7 +1,7 @@
 import styles from "@/index.common.less";
 
 const initState = {
-  mixinMenuActivePath: "",
+  mixinMenuActivePath: window.location.pathname.split("/").filter((x) => x)[0],
   sideBarCollapsed: false,
   theme: "dark",
   themeColor: styles.themeColor,

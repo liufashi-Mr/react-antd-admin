@@ -23,7 +23,6 @@ const MixinMenuChild = () => {
   }, [mixinMenuActivePath]);
   useEffect(() => {
     dispatch({ type: "setSideBarHidden", data: !childMenuList.length });
-    console.log(!childMenuList.length, "1112");
   }, [childMenuList]);
   const dispatch = useDispatch();
   const getChildMenu = (routes, parentPath) => {
