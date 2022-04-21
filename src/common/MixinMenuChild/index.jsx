@@ -8,7 +8,7 @@ import { useMenu } from "@/hooks";
 const { SubMenu } = Menu;
 
 const MixinMenuChild = () => {
-  const { mixinMenuActivePath, sideBarHidden } = useSelector(
+  const { mixinMenuActivePath } = useSelector(
     (state) => state.SettingModel
   );
   const selectedKeys = useMenu();
