@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+    'plugin:prettier/recommended',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -11,9 +16,9 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
+  plugins: ['react', 'prettier', 'react-hooks', 'jsx-a11y'],
   rules: {
-    'semi': ["error", "always"],
+    'semi': ['error', 'always'],
     // 检查 Hooks 的使用规则
     'react-hooks/rules-of-hooks': 'error',
     // 检查依赖项的声明
