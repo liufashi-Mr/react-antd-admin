@@ -32,15 +32,25 @@
   min-width: 0 !important;
   max-width: 0 !important;
   overflow: hidden;
+  :global {
+    .ant-layout-sider-trigger {
+      width: 0px !important;
+      overflow: hidden;
+    }
+    .ant-menu-submenu .ant-menu-sub {
+      transition: background-color 0.3s,
+        padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
 }
 .inline,
 .mixin {
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .mixin {
   height: calc(100vh - 48px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 horizontal {
   display: none;
