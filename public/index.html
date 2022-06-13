@@ -13,7 +13,6 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="stylesheet/less" type="text/css" href="%PUBLIC_URL%/color.less" />
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,13 +26,14 @@
 </head>
 
 <body>
+    <link rel="stylesheet/less" type="text/css" href="%PUBLIC_URL%/color.less" />
   <script>
     window.less = {
       async: false,
       env: "production"
     };
   </script>
-  <script type="text/javascript" src="https://cdn.bootcss.com/less.js/2.7.3/less.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/less.js/2.5.3/less.min.js"></script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
