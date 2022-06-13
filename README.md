@@ -21,7 +21,7 @@
 3. 顶部-侧边布局：同样拥有顶部导航及侧边栏，适用于应用型的网站，但是会牺牲部分内容空间。
 
 - 预览：[react-antd-admin](https://admin.template.liufashi.top)
-- 使用指南：[https://blog.liufashi.top](https://blog.liufashi.top)
+- 使用指南：[https://blog.liufashi.top](https://blog.liufashi.top/2022/06/13/react-antd-admin/)
 
 ## 项目目录
 
@@ -184,7 +184,7 @@ li {
 @border-color-base: #d9d9d9; // 边框色
 ```
 
-若需要动态修改可以参考[定制主题](https://ant.design/docs/react/customize-theme-variable-cn)
+若需要动态修改可以参考[定制主题](https://ant.design/docs/react/customize-theme-variable-cn),也可以使用 antd-theme-generator 插件通过 less.modifyVars 的方式修改主题色
 
 ## 规范
 
