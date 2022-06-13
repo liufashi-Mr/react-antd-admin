@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Drawer } from 'antd';
-import { Tooltip } from 'antd';
+import { Tooltip, Switch, Drawer } from 'antd';
 import { SettingOutlined, CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import cls from 'classnames';
 import styles from './index.less';
@@ -74,7 +73,6 @@ const SettingMenu = () => {
               className={styles.mixin}
               onClick={() => {
                 dispatch({ type: 'setMenuMode', data: 'mixin' });
-                // dispatch({ type: "setTheme", data: "light" });
               }}
             >
               {menuMode === 'mixin' && <CheckOutlined />}
@@ -82,16 +80,10 @@ const SettingMenu = () => {
           </Tooltip>
         </div>
       </div>
-      <div className={cls(styles.item, styles.vertical)}>
-        <p>主题色</p>
-        <div style={{ display: 'flex' }}>
-          {
-            <Tooltip title="暗色主题">
-              <button onClick={() => {}}>{[[], [], [[], '测试2'], [], [], []]}</button>
-            </Tooltip>
-          }
-        </div>
-      </div>
+      {/* <div className={cls(styles.flex, styles.horizontal)}>
+        <div>固定顶部</div>
+        <Switch defaultChecked onChange={v => dispatch({ type: 'setFixHeader', data: v })} />
+      </div> */}
       <div className={cls(styles.item, styles.flex)}></div>
     </Drawer>
   );

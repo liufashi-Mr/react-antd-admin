@@ -5,8 +5,8 @@ const initState = {
   sideBarCollapsed: false,
   theme: 'dark',
   themeColor: styles.themeColor,
-  fixHeader: false,
-  menuMode: 'mixin',
+  fixHeader: true,
+  menuMode: 'horizontal',
   sideBarHidden: false,
 };
 const SettingModel = (state = initState, { type, data }) => {
