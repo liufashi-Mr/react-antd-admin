@@ -4,18 +4,18 @@
   right: 300px;
   z-index: 0;
   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
   width: 48px;
+  height: 48px;
+  color: #fff;
   font-size: 20px;
   text-align: center;
   background-color: @primary-color;
   border-radius: 4px 0 0 4px;
   cursor: pointer;
   pointer-events: auto;
-  color: #fff;
-  display: flex;
 }
 .container {
   :global {
@@ -32,14 +32,14 @@
   .vertical {
     .dark,
     .light {
-      padding: 4px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
       position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
       width: 44px;
       height: 36px;
       margin-right: 16px;
+      padding: 4px;
       overflow: hidden;
       background-color: #f0f2f5;
       border-radius: 4px;
@@ -48,14 +48,14 @@
     }
     .dark::before,
     .light::before {
-      content: "";
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1;
       width: 33%;
       height: 100%;
-      z-index: 1;
       background-color: #001529;
+      content: '';
     }
     .light::before {
       background-color: #fff;
@@ -68,7 +68,7 @@
       width: 100%;
       height: 25%;
       background-color: #fff;
-      content: "";
+      content: '';
     }
     .dark::after {
       background-color: #001529;
@@ -76,14 +76,14 @@
     .inline,
     .horizontal,
     .mixin {
-      padding: 4px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
       position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
       width: 44px;
       height: 36px;
       margin-right: 16px;
+      padding: 4px;
       overflow: hidden;
       background-color: #f0f2f5;
       border-radius: 4px;
@@ -92,14 +92,14 @@
     }
     .inline::before,
     .mixin::before {
-      content: "";
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1;
       width: 33%;
       height: 100%;
-      z-index: 1;
       background-color: #001529;
+      content: '';
     }
     .mixin::before {
       background-color: #fff;
@@ -113,9 +113,10 @@
       width: 100%;
       height: 25%;
       background-color: #fff;
-      content: "";
+      content: '';
     }
-    .horizontal::after,.mixin::after{
+    .horizontal::after,
+    .mixin::after {
       background-color: #001529;
     }
   }

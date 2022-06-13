@@ -1,38 +1,38 @@
-import styles from "@/index.common.less";
+import styles from '@/index.common.less';
 
 const initState = {
-  mixinMenuActivePath: window.location.pathname.split("/").filter((x) => x)[0],
+  mixinMenuActivePath: window.location.pathname.split('/').filter(x => x)[0],
   sideBarCollapsed: false,
-  theme: "dark",
+  theme: 'dark',
   themeColor: styles.themeColor,
   fixHeader: false,
-  menuMode: "mixin",
+  menuMode: 'mixin',
   sideBarHidden: false,
 };
 const SettingModel = (state = initState, { type, data }) => {
   switch (type) {
-    case "setSideBarCollapsed": {
+    case 'setSideBarCollapsed': {
       return { ...state, sideBarCollapsed: !state.sideBarCollapsed };
     }
-    case "setSideBarHidden": {
+    case 'setSideBarHidden': {
       return { ...state, sideBarHidden: data };
     }
-    case "setTheme": {
+    case 'setTheme': {
       return { ...state, theme: data };
     }
-    case "setFixHeader": {
+    case 'setFixHeader': {
       return { ...state, fixHeader: data };
     }
-    case "setShowSettings": {
+    case 'setShowSettings': {
       return { ...state, showSettings: data };
     }
-    case "setMenuMode": {
+    case 'setMenuMode': {
       return { ...state, menuMode: data };
     }
-    case "setThemeColor": {
+    case 'setThemeColor': {
       return { ...state, themeColor: data };
     }
-    case "setMixinMenuActivePath": {
+    case 'setMixinMenuActivePath': {
       return { ...state, mixinMenuActivePath: data };
     }
     default: {

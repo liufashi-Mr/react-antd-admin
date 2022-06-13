@@ -1,24 +1,24 @@
 .navBar {
-  background-color: #fff;
-  height: 48px;
-  line-height: 48px;
-  overflow: hidden;
-  padding: 0 16px;
-  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
-  transition: width 0.3s cubic-bezier(.645,.045,.355,1);
   // width: calc(100vw - 208px);
   // position: fixed;
   // right: 0;
   width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  overflow: hidden;
+  line-height: 48px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+  transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   .navHeader {
     display: flex;
     align-items: center;
     .inlineLeft {
-      font-size: 16px;
-      flex: 1 1 0%;
       display: flex;
+      flex: 1 1 0%;
       align-items: center;
-      >span{
+      font-size: 16px;
+      > span {
         margin-right: 10px;
       }
     }
@@ -32,8 +32,8 @@
       }
       .logo {
         display: flex;
-        margin-right: 36px;
         align-items: center;
+        margin-right: 36px;
         cursor: pointer;
         img {
           width: 28px;
@@ -41,10 +41,10 @@
         }
         span {
           margin-left: 12px;
-          line-height: 48px;
           color: #fff;
-          font-size: 18px;
           font-weight: 500;
+          font-size: 18px;
+          line-height: 48px;
         }
 
         .light {
@@ -58,8 +58,8 @@
   }
 }
 .mixin {
+  color: #fff;
   background-color: #001529;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
-  color: #fff;
 }
-@import url("../common.less");
+@import url('../common.less');

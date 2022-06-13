@@ -1,5 +1,5 @@
 const initState = {
-  name: "liu",
+  name: 'liu',
 };
 const CommonModel = (state = initState, action) => state;
 export default CommonModel;

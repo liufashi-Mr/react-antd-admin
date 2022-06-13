@@ -1,2 +1,2 @@
-export * from "./insideRoutes";
-export * from "./outsideRoutes";
+export * from './insideRoutes';
+export * from './outsideRoutes';

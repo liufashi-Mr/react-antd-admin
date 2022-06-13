@@ -6,7 +6,7 @@ module.exports = {
   //使用分号
   semi: true,
   //单引号
-  singleQuote: false,
+  singleQuote: true,
   //jsx单引号
   jsxSingleQuote: false,
   //行末尾标识
