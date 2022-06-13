@@ -1,9 +1,8 @@
 .setting {
   position: absolute;
   top: 240px;
-  right: 300px;
-  z-index: 0;
-  display: flex;
+  right: 0;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +15,11 @@
   border-radius: 4px 0 0 4px;
   cursor: pointer;
   pointer-events: auto;
+  transform: translateX(-300px);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.close {
+  transform: translateX(0px);
 }
 .container {
   :global {
