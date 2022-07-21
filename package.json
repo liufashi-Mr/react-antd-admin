@@ -1,6 +1,6 @@
 {
   "name": "react-ant-admin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -66,8 +66,8 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "node color && node scripts/start.js",
-    "build": "node color && node scripts/build.js",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "lint": "eslint --ext .js,.jsx src --color",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color"
@@ -102,6 +102,7 @@
     "husky": "4.3.8",
     "less": "^4.1.2",
     "lint-staged": "^12.4.3",
+    "prettier": "^2.7.1",
     "sass": "^1.50.0",
     "style-resources-loader": "^1.5.0"
   },
@@ -160,7 +161,7 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.{jsx,js}": [
+    "*.{jsx,js}": [
       "node -v",
       "npm run lint:fix",
       "prettier --write"
