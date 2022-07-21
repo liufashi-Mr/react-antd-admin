@@ -5,12 +5,12 @@ on: [push]
 # 存放 learn-github-actions 工作流程中的所有Job
 jobs:
   # 指定一个Job的名称为check-bats-version
-  CI:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       # 拉取项目代码
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       # 给当前环境下载node
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -18,7 +18,7 @@ jobs:
           node-version: '14.x'
       - name: use yarn.js 1.22.19
         # 使用action库  actions/setup-node安装yarn
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           yarn-version: 1.22.19
       # 检查缓存
