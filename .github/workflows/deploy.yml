@@ -45,26 +45,26 @@ jobs:
         run: CI=false yarn run build
       - name: 查看文件
         run: ls -a # 查看打包后的目录文件
-      - name: oss上传
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }} # 服务器host
-          username: ${{ secrets.USER }} # 服务器用户名
-          password: ${{ secrets.PASSWORD }} # 服务器密码
-          source: './build' # 需要上传的文件, 多文件使用逗号隔开
-          target: '/apps/react-admin/' # 上传到服务器的什么位置
       # - name: oss上传
-      #   uses: easingthemes/ssh-deploy@v2.1.1
-      #   env:
-      #     # 私钥
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-      #     # scp参数
-      #     ARGS: '-avzr --delete'
-      #     # 源目录，编译后生成的文件目录
-      #     SOURCE: './build'
-      #     # 服务器ip：换成你的服务器IP
-      #     REMOTE_HOST: '121.40.223.192'
-      #     # 用户
-      #     REMOTE_USER: 'root'
-      #     # 目标地址 你在服务器上部署代码的地方
-      #     TARGET: '/apps/react-admin/'
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }} # 服务器host
+      #     username: ${{ secrets.USER }} # 服务器用户名
+      #     password: ${{ secrets.PASSWORD }} # 服务器密码
+      #     source: './build' # 需要上传的文件, 多文件使用逗号隔开
+      #     target: '/apps/react-admin/' # 上传到服务器的什么位置
+      - name: oss上传
+        uses: easingthemes/ssh-deploy@v2.1.1
+        env:
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          # scp参数
+          ARGS: '-avzr --delete'
+          # 源目录，编译后生成的文件目录
+          SOURCE: './build'
+          # 服务器ip：换成你的服务器IP
+          REMOTE_HOST: '121.40.223.192'
+          # 用户
+          REMOTE_USER: 'root'
+          # 目标地址 你在服务器上部署代码的地方
+          TARGET: '/apps/react-admin/'
