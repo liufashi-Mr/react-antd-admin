@@ -59,12 +59,12 @@ jobs:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           # scp参数
-          ARGS: '-avzr --delete'
+          ARGS: '-rltgoDzvO'
           # 源目录，编译后生成的文件目录
-          SOURCE: './build'
+          SOURCE: 'build/'
           # 服务器ip：换成你的服务器IP
-          REMOTE_HOST: '121.40.223.192'
+          REMOTE_HOST: ${{ secrets.HOST }}
           # 用户
-          REMOTE_USER: 'root'
+          REMOTE_USER: ${{ secrets.USER }}
           # 目标地址 你在服务器上部署代码的地方
           TARGET: '/apps/react-admin/'
