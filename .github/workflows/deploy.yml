@@ -42,7 +42,7 @@ jobs:
         run: yarn
       # 运行代码打包
       - name: node.js构建
-        run: yarn build
+        run: yarn run build
       - name: 查看文件
         run: ls -a # 查看打包后的目录文件
       - name: Deploy to Aliyun
