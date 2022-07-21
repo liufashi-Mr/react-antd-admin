@@ -45,11 +45,11 @@ jobs:
         run: CI=false yarn run build
       - name: 查看文件
         run: ls -a # 查看打包后的目录文件
-      - name: Deploy to Aliyun
+      - name: oss上传
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
           # 私钥
-          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_PUB_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           # scp参数
           ARGS: '-avzr --delete'
           # 源目录，编译后生成的文件目录
