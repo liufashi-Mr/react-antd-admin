@@ -24,6 +24,7 @@ npx create-cli create [name]
 ```
 
 选择第二个
+
 ![选择](https://blog.liufashi.top/img/typescript-h5-template/cli.png)
 
 
