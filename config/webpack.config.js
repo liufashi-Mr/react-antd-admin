@@ -176,7 +176,6 @@ module.exports = function (webpackEnv) {
           options: {
             sourceMap: true,
             lessOptions: {
-              modifyVars: { '@primary-color': '#1DA57A' },
               javascriptEnabled: true,
             },
           },
