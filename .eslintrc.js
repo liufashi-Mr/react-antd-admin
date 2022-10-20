@@ -1,16 +1,5 @@
 module.exports = {
-  // env: {
-  //   browser: true,
-  //   es2021: true,
-  // },
   extends: [require.resolve('@umijs/fabric/dist/eslint')],
-  // parserOptions: {
-  //   ecmaFeatures: {
-  //     jsx: true,
-  //   },
-  //   ecmaVersion: 12,
-  //   sourceType: 'module',
-  // },
   rules: {
     'semi': ['error', 'always'],
     // 检查 Hooks 的使用规则

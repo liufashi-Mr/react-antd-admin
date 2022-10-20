@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Breadcrumb } from 'antd';
 import { insideRoutes } from '@/router';
+import { Breadcrumb } from 'antd';
+import { Link, useLocation } from 'react-router-dom';
 const BreadcrumbGroup = () => {
   const location = useLocation();
   const pathSnippets = location.pathname.split('/').filter(i => i);
   const getBreadcrumbTitle = (routes, path) => {
     return routes.reduce((pre, val) => {
+      let temp = pre;
       if (val.path === path || (/\/\/*|:/.test(val.path) && val.path.includes(path))) {
-        return (pre += val.title);
+        return (temp += val.title);
       }
-      return (pre += getBreadcrumbTitle(val?.children || [], path));
+      return (temp += getBreadcrumbTitle(val?.children || [], path));
     }, '');
   };
   const extraBreadcrumbItems = pathSnippets.map((path, index) => {
