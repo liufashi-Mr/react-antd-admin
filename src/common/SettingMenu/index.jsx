@@ -88,7 +88,7 @@ const SettingMenu = () => {
         <div>固定顶部</div>
         <Switch defaultChecked onChange={v => dispatch({ type: 'setFixHeader', data: v })} />
       </div> */}
-        <div className={cls(styles.item, styles.flex)}></div>
+        <div className={cls(styles.item, styles.flex)} />
       </Drawer>
     </>
   );

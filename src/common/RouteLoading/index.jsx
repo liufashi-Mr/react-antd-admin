@@ -4,7 +4,7 @@ import styles from './index.less';
 const RouteLoading = () => {
   return (
     <Spin size="large">
-      <div className={styles.mask}></div>
+      <div className={styles.mask} />
     </Spin>
   );
 };

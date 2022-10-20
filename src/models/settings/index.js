@@ -6,7 +6,7 @@ const initState = {
   theme: 'dark',
   themeColor: styles.themeColor,
   fixHeader: true,
-  menuMode: 'horizontal',
+  menuMode: 'inline',
   sideBarHidden: false,
 };
 const SettingModel = (state = initState, { type, data }) => {

@@ -9,8 +9,8 @@ export default function List() {
       <Link to="dashboardGraphs">qwer</Link>
       <Link to="InvoiceList">asdf</Link>
       <Routes>
-        <Route index element={<InvoiceList />}></Route>
-        <Route path="dashboardGraphs" element={<DashboardGraphs />}></Route>
+        <Route index element={<InvoiceList />} />
+        <Route path="dashboardGraphs" element={<DashboardGraphs />} />
       </Routes>
     </div>
   );

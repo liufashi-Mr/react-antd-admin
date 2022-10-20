@@ -93,8 +93,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
+    "@umijs/fabric": "2.11.1",
     "antd-theme-generator": "^1.2.11",
-    "eslint": "^8.16.0",
+    "eslint": "^7.32.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
@@ -154,11 +155,6 @@
       "jest-watch-typeahead/testname"
     ],
     "resetMocks": true
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   },
   "lint-staged": {
     "*.{jsx,js}": [

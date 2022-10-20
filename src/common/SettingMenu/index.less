@@ -13,10 +13,10 @@
   text-align: center;
   background-color: @primary-color;
   border-radius: 4px 0 0 4px;
-  cursor: pointer;
-  pointer-events: auto;
   transform: translateX(-300px);
+  cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: auto;
 }
 .close {
   transform: translateX(0px);
@@ -32,11 +32,11 @@
     margin-bottom: 18px;
   }
   .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
     padding-right: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   .vertical {
     .dark,

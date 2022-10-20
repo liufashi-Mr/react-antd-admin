@@ -1,4 +1,6 @@
+const fabric = require('@umijs/fabric');
 module.exports = {
+  ...fabric.prettier,
   //每行宽度
   printWidth: 100,
   //制表符宽度
