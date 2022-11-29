@@ -1,0 +1,43 @@
+@import '~antd/dist/antd.less';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.ant-card {
+  border-radius: 6px;
+}
+.ant-card-bordered {
+  border: none;
+}
+.global-cardTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-transition-enter {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+.page-transition-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.5s;
+}
+.page-transition-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.page-transition-exit-active {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s;
+}

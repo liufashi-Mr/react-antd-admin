@@ -1,0 +1,77 @@
+
+.navBar {
+  position: fixed;
+  left: 208px;
+  z-index: 999;
+  width: calc(100vw - 208px);
+  height: 48px;
+  padding: 0 16px;
+  overflow: hidden;
+  line-height: 48px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+
+  .navHeader {
+    display: flex;
+    align-items: center;
+    .inlineLeft {
+      display: flex;
+      flex: 1 1 0%;
+      align-items: center;
+      font-size: 16px;
+      > span {
+        margin-right: 10px;
+      }
+    }
+    .left {
+      display: flex;
+      flex: 1 1 0%;
+      width: 100%;
+      .menu {
+        flex: 1 1 0%;
+        min-width: 0;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 36px;
+        cursor: pointer;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+        span {
+          margin-left: 12px;
+          color: #fff;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 48px;
+        }
+
+        .light {
+          color: @primary-color;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      padding-right: 16px;
+    }
+  }
+}
+.navBarCollapsed {
+  left: 48px;
+  width: calc(100vw - 48px);
+}
+.horizontal {
+  left: 0;
+  width: 100vw;
+}
+.mixin {
+  color: #fff;
+  background-color: #001529;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, background-color 0.3s;
+}
+@import url('../common.less');

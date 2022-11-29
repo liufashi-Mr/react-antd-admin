@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import CommonModel from './common';
-import SettingModel from './settings';
+import CommonReducer from './common';
+import SettingReducer from './settings';
 export default combineReducers({
-  CommonModel,
-  SettingModel,
+  CommonReducer,
+  SettingReducer,
 });

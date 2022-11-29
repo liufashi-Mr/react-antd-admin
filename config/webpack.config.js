@@ -183,7 +183,8 @@ module.exports = function (webpackEnv) {
         {
           loader: require.resolve('style-resources-loader'),
           options: {
-            patterns: path.resolve(paths.appSrc, './index.common.less'),
+            patterns: path.resolve(paths.appSrc, './styles/variables.common.less'),
+            injector: 'append',
           },
         }
       );

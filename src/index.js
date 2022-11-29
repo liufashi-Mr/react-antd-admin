@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './models';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/lib/locale/zh_CN';
+import store, { persistor } from './models';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
-import './index.common.less';
-
+import { HashRouter as Router } from 'react-router-dom';
+import './styles/global.common.less';
+import { PersistGate } from 'redux-persist/integration/react';
 ReactDOM.render(
   <Router>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <ConfigProvider locale={zhCN}>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </ConfigProvider>
   </Router>,
   document.getElementById('root')
 );

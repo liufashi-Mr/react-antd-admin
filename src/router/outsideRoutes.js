@@ -4,6 +4,6 @@ export const outsideRoutes = [
     path: '/login',
     title: '登录',
     meta: { title: '', roles: [] },
-    component: lazy(() => import('@/pages/Login')),
+    element: lazy(() => import('@/pages/Login')),
   },
 ];

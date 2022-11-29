@@ -2,6 +2,7 @@
   "name": "react-ant-admin",
   "version": "0.1.1",
   "private": false,
+  "homepage": "./",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -9,7 +10,8 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "4.20.7",
+    "ahooks": "^3.7.2",
+    "antd": "4.19.5",
     "axios": "^0.27.2",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
@@ -27,6 +29,8 @@
     "eslint-config-react-app": "^7.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
+    "form-render": "^1.13.19",
+    "fr-generator": "^2.8.3",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
@@ -47,9 +51,12 @@
     "react-app-polyfill": "^3.0.0",
     "react-dev-utils": "^12.0.0",
     "react-dom": "^17.0.2",
+    "react-json-view": "^1.21.3",
     "react-redux": "^7.2.6",
     "react-refresh": "^0.11.0",
-    "react-router-dom": "^6.2.1",
+    "react-router-dom": "6.4.0",
+    "react-transition-group": "^4.4.5",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
@@ -101,7 +108,9 @@
     "lint-staged": "^12.4.3",
     "prettier": "^2.7.1",
     "sass": "^1.50.0",
-    "style-resources-loader": "^1.5.0"
+    "style-resources-loader": "^1.5.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^3.0.3"
   },
   "jest": {
     "roots": [

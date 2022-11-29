@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from '@/common/Layout';
-import getRoutes from '@/common/RouteMap';
+import Layout from '@/components/common/Layout';
+import { getRoutes } from '@/components/common/RouteMap';
 import { outsideRoutes } from '@/router';
-import RouteLoading from './common/RouteLoading';
+
+import RouteLoading from './components/common/RouteLoading';
 function App() {
   return (
     <Suspense fallback={<RouteLoading />}>

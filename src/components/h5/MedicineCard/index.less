@@ -1,0 +1,107 @@
+@import url('../index.common.less');
+
+.card {
+    width: $card-width;
+    border-radius: $card-border-radius;
+    overflow: hidden;
+
+    .header {
+        color: #fff;
+        padding: 12px 16px;
+        min-height: 46px;
+        font-size: 16px;
+    }
+
+    .disabled {
+        display: none;
+    }
+
+    .center {
+        width: 308px;
+        background-color: #fff;
+        padding: 16px 12px;
+        margin: 0 4px 4px;
+        border-radius: $card-border-radius;
+
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1B1C1E;
+            margin-bottom: 16px;
+
+            span {
+                margin-right: 10px;
+            }
+        }
+
+        .medicineList {
+            font-size: 16px;
+
+            li {
+                margin-bottom: 8px;
+
+                .order {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .left {
+                        max-width: 190px;
+                        word-break: break-all;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    .ellipsis {
+                        margin: 0 16px 0 12px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        flex: 1;
+                    }
+
+                    .right {
+                        white-space: nowrap;
+                    }
+                }
+
+                .medication {
+                    color: #6C7380;
+                    font-size: 14px;
+                    margin-top: 4px;
+                    padding: 0 4px;
+                }
+            }
+        }
+
+        .buttons {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+
+            :global {
+                .guide-btn {
+                    margin-right: 16px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.primary {
+    background-color: $primary-color;
+}
+
+.warning {
+    background-color: $warning-color;
+}
+
+.disabled {
+    background-color: $disabled-color;
+    padding-top: 4px;
+}

@@ -1,15 +1,15 @@
-import styles from '@/index.common.less';
+// 将该样式置顶，方便覆盖
+import '@/styles/global.common.less';
 
 const initState = {
   mixinMenuActivePath: window.location.pathname.split('/').filter(x => x)[0],
   sideBarCollapsed: false,
   theme: 'dark',
-  themeColor: styles.themeColor,
   fixHeader: true,
   menuMode: 'inline',
   sideBarHidden: false,
 };
-const SettingModel = (state = initState, { type, data }) => {
+const SettingReducer = (state = initState, { type, data }) => {
   switch (type) {
     case 'setSideBarCollapsed': {
       return { ...state, sideBarCollapsed: !state.sideBarCollapsed };
@@ -40,4 +40,4 @@ const SettingModel = (state = initState, { type, data }) => {
     }
   }
 };
-export default SettingModel;
+export default SettingReducer;
