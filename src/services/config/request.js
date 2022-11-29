@@ -1,9 +1,8 @@
 import axios from 'axios';
-import API_DOMAIN from './domain';
 import QueryString from 'qs';
 import { message } from 'antd';
 const defaultConfig = {
-  baseURL: API_DOMAIN,
+  baseURL: process.env.REACT_APP_ENV,
   timeout: 120 * 1000,
   withCredentials: true,
   headers: {
