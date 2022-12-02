@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": false,
   "dependencies": {
+    "@ant-design/charts": "^1.4.2",
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",

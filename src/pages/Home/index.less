@@ -1,0 +1,42 @@
+.container {
+  padding: 24px;
+  .item {
+    width: 100%;
+    height: 122px;
+    padding: 24px;
+    background-color: #e5eaf0;
+    border-radius: @border-radius-base; // 组件/浮层圆角
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+      transform: scale(1.05);
+    }
+    .name {
+      font-size: 15px;
+    }
+
+    .data {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      justify-content: space-between;
+      font-size: 28px;
+      .icon {
+        color: #758aee;
+        font-size: 20px;
+        margin-right: 4px;
+      }
+      .percent {
+        font-size: 18px;
+      }
+    }
+  }
+  :global {
+    .ant-card {
+      transition: box-shadow 0.3s;
+    }
+    .ant-card:hover {
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+    }
+  }
+}

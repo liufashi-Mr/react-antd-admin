@@ -76,8 +76,7 @@ npx create-cli create [name]
     ├── src
     │    ├── apis
     │    ├── assets #资源文件
-    │    ├── common #模板实现用到的组件,无特殊情况不需更改
-    │    ├── components #实际项目组件
+    │    ├── components #组件
     │    ├── hooks #hooks
     │    │      ├── index.js #统一导出
     │    │      ├── common.js #系统用到的自定义hooks
