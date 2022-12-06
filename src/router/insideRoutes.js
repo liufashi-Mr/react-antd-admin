@@ -46,7 +46,7 @@ export const insideRoutes = [
         element: lazy(() => import('@/pages/FormConfig')),
       },
       {
-        path: 'form',
+        path: 'form-all',
         title: '复杂表单页',
         element: lazy(() => import('@/pages/ConfigDetail')),
       },
