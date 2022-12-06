@@ -21,7 +21,7 @@ const BreadcrumbGroup = () => {
       );
     })
     .filter(Boolean);
-  let documentTitle = '智能导引管理后台';
+  let documentTitle = 'react管理后台';
   const extraBreadcrumbItems = pathSnippets
     .map((path, index) => {
       const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;

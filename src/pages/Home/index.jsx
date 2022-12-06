@@ -18,7 +18,7 @@ export default function Home() {
       <Row gutter={[{ xs: 8, sm: 16, md: 24 }, 16]}>
         <Col span={18}>
           <div className={styles.item}>
-            <p style={{ fontSize: 21, color: '#758aee' }}>Admin，上午好！欢迎回来！</p>
+            <p style={{ fontSize: 21, color: '#758aee' }}>Hangzhou Ma</p>
             <p style={{ fontSize: 15 }}>
               开源等于互助；开源需要大家一起来支持，支持的方式有很多种，比如使用、推荐、写教程、保护生态、贡献代码、回答问题、分享经验、打赏赞助等；欢迎您加入我们！
             </p>

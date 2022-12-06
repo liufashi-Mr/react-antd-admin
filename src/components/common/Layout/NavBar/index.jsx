@@ -31,7 +31,7 @@ const NavBar = () => {
                   [styles[theme]]: menuMode !== 'inline',
                 })}
               >
-                智能导引
+                Hangzhou Ma
               </span>
             </div>
             <div className={styles.menu}>
@@ -62,10 +62,10 @@ const NavBar = () => {
               }
             >
               <div>
-                <Avatar size={28} style={{ backgroundColor: 'pink', marginRight: 8 }}>
-                  海民
+                <Avatar size={28} style={{ backgroundColor: '#6137b2', marginRight: 8 }}>
+                  Ma
                 </Avatar>
-                <span>Lead Architect</span>
+                <span>Hangzhou Ma</span>
               </div>
             </Dropdown>
           </div>

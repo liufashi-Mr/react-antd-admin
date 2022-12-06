@@ -35,7 +35,7 @@ const SideBar = () => {
                 })}
               >
                 <img src={logo} alt="logo" />
-                {!sideBarCollapsed && <span className={styles[theme]}>智能导引</span>}
+                {!sideBarCollapsed && <span className={styles[theme]}>react-admin</span>}
               </div>
             </Link>
           )}
