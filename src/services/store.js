@@ -1,4 +1,4 @@
-import request from './config/request';
+import request from '@/utils/request';
 
 /*
     前台展示控制

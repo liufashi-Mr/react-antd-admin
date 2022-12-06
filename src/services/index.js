@@ -1,2 +1,2 @@
-export * from './interfaceConfig';
-export * from './cardConfig';
+export * from './shop';
+export * from './store';

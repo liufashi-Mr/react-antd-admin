@@ -1,8 +1,10 @@
-import request from './config/request';
+import request from '@/utils/request';
 
-/*
-    接入配置
-*/
+export const getShopList = options =>
+  request('post', 'type/getproduct', {
+    params: options,
+  });
+
 // 获取服务列表
 export const getList = () => request('get', '/usher/system/usherService/getList');
 // 接入的机构列表 CRUD  上下线

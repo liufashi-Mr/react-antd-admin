@@ -8,11 +8,7 @@ import Chart3 from './components/Chart3';
 import Chart4 from './components/Chart4';
 import ChartCenter from './components/MapChart';
 
-export default function Home() {
-  const res = useSelector(state => {
-    return state.CommonModel;
-  });
-
+export default function Dashboard() {
   return (
     <div className={styles.container}>
       <Row gutter={[{ xs: 8, sm: 16, md: 24 }, 16]}>
@@ -71,7 +67,6 @@ export default function Home() {
             </div>
           </div>
         </Col>
-
         <Col span={6}>
           <Card title="环形图">
             <Chart3 />
